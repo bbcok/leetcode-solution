@@ -23,7 +23,7 @@ public class NQueens {
             return;
         }
         for (int i=0;i<n;i++){
-
+            if (!isValid(board,row,i)) continue;
             StringBuilder sb = new StringBuilder(board.get(row));
             sb.setCharAt(n, 'Q');
             board.set(row,sb.toString());
