@@ -85,18 +85,4 @@ public class LISPCalculate {
     private static void handleInvalidInput() {
         System.exit(0);
     }
-
-    public static void solution2(String str) {
-        for (int i = 0; i < str.length(); i++){
-            int index = 0;
-            if (str.charAt(i) == '('){
-                operatorStack.push(str.substring(i + 1, i + 4));
-                i += 4;
-                index = i+1;
-           }
-            if (str.charAt(i) == ')'){
-
-            }
-        }
-    }
 }
