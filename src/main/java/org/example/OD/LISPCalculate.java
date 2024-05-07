@@ -95,8 +95,21 @@ public class LISPCalculate {
                 index = i+1;
            }
             if (str.charAt(i) == ')'){
-
+                if (index < i){
+                    pushNumber(str.substring(index, i));
+                    i += 1;
+                    index = i+1;
+                }
+                calculate();
+            }
+            if (str.charAt(i) == ' ' && index < i){
+                pushNumber(str.substring(index, i));
+                index = i+1;
             }
         }
+        while (!operatorStack.isEmpty()){
+            calculate();
+        }
+        System.out.println(numStack.get(0));
     }
 }
