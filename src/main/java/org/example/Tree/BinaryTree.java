@@ -44,7 +44,13 @@ public class BinaryTree {
 
         return root;
     }
-
+    public static TreeNode buildTree(int[] nums){
+        String[] strs = new String[nums.length];
+        for(int i = 0;i < nums.length;i++){
+            strs[i] = String.valueOf(nums[i]);
+        }
+        return buildTree(strs);
+    }
     public static void main(String[] args) {
         String[] nums = {"1", "3", "2", "5", "null", "null", "9", "6", "null", "7"};
         TreeNode root = buildTree(nums);
